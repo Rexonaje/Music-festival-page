@@ -1,0 +1,47 @@
+@use '../base/variables' as v;
+/*
+@mixin heading($color:black,$border-radius:false){
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color:$color; 
+    letter-spacing: 1px;
+
+    @if  $border-radius{
+        border-radius: 1rem;
+    }
+}*/
+
+@mixin telefono{
+    @media (max-width: v.$telefono) {
+        @content;// al usar @includes telefono{contenido} este se agrega con el @content al mixin
+    }
+}
+
+@mixin tablet{
+    @media (min-width: v.$tablet) {
+        @content;// al usar @includes telefono{contenido} este se agrega con el @content al mixin
+    }
+}
+
+@mixin desktop{
+    @media (min-width: v.$desktop) {
+        @content;// al usar @includes telefono{contenido} este se agrega con el @content al mixin
+    }
+}
+
+@mixin desktopXL{
+    @media (min-width: v.$desktopXL) {
+        @content;// al usar @includes telefono{contenido} este se agrega con el @content al mixin
+    }
+}
+
+@mixin grid($columnas,$espaciado){
+    display: grid;
+    grid-template-columns: repeat($columnas,1fr);
+    gap: $espaciado;
+}
+@mixin resetear-lista{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
